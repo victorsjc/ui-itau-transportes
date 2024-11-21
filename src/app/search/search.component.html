@@ -1,0 +1,32 @@
+<mat-card>
+    <form (ngSubmit)="onSearch()">
+      <mat-form-field appearance="fill">
+        <mat-label>Data</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="date" name="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Origem</mat-label>
+        <input matInput [(ngModel)]="origin" name="origin" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Destino</mat-label>
+        <input matInput [(ngModel)]="destination" name="destination" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="status" name="status" required>
+          <mat-option value="disponivel">Disponível</mat-option>
+          <mat-option value="indisponivel">Indisponível</mat-option>
+          <mat-option value="reservado">Reservado</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Buscar</button>
+    </form>
+  </mat-card>
+  
